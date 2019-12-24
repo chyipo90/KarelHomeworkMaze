@@ -1,0 +1,71 @@
+/**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/
+function main(){
+   while (leftIsClear()) {
+   kusKusi();
+   up();
+   }
+   putBeeper();
+   turnRight();
+   back();
+   turnRight();
+   while (noBeepersPresent()){
+   move();
+   side();
+   }
+   turnAround();
+   while (beepersPresent()){
+   stepAndPick();
+   upAndPick();
+   }
+   turnRight();
+   back();
+   turnRight();
+   back();
+   turnAround();
+   while (beepersPresent()){
+   stepAndPick();
+   upAndPick();
+   }
+   putBeeper();
+}
+
+function stepAndPick(){
+   pickBeeper();
+   if (frontIsClear()) {
+    move();
+   }
+}
+function upAndPick(){
+   turnLeft();
+   if (frontIsClear()) {
+   move();
+   }
+   turnRight();
+}
+function kusKusi(){
+   putBeeper();
+   if (frontIsClear()){
+   move();
+   }
+}
+function up(){
+   turnLeft();
+   if(frontIsClear()){
+   move();
+  }
+   turnRight();
+}
+function back() {
+   while (frontIsClear()){
+   move();
+   }
+}
+function side(){
+   turnRight();
+   move();
+   turnLeft();
+}
